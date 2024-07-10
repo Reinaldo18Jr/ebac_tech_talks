@@ -1,0 +1,25 @@
+@use '../variables';
+
+.button {
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap; //forçar texto ficar tudo em uma linha sem quebrar para baixo//
+
+    &--primary {
+        color: variables.$textColor;
+        background-color: variables.$purple;
+    }
+
+    @media (max-width:640px) {
+        display: block;     // na tag "link a" já ocupa 100% do width, em tag "button" teria que acrescentar o width//
+        width: 100%;
+    }
+
+    @media (max-width: 1024px) {
+        display: flex;
+        align-items: center; //align-items só funciona com display-flex ativo//
+    }
+}
